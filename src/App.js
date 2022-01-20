@@ -18,13 +18,13 @@ function App() {
   }, []);
 
   //if we want to add elements to local storage, this is where it happens.
-  //this runs on every render  
+  //this runs whenever the numbersArray (the items taht we want to save to local storage changes)
   React.useEffect(() => {
     console.log('updating storage')
     localStorage.setItem('numbersArray', JSON.stringify(numbersArray));
   }, [numbersArray]);
   ///
-  //this pushes new values to loalStorage
+  //this pushes new values to localStorage
   const pushToArray = (number) => {
     console.log('hello')
     setNumbersArray([...numbersArray, Number(number)])
