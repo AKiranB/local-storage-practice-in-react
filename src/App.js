@@ -35,7 +35,8 @@ function App() {
   return (
     <div>
       <input value={number} onChange={((e) => setNumber(e.target.value))}></input>
-      <button onClick={() => pushToArray(number)}>push</button>
+      <button onClick={() => pushToArray(number)}>Add new value to storage</button>
+      <button onClick={() => localStorage.clear()}>Clear storage</button>
     </div>
   );
 
