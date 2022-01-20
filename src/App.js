@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   //if we want to add elements to local storage, this is where it happens.
-  //this runs on every render  
+  //this runs whenever the numbersArray changes, ie whenever a new value needs to be added to local-storage
   React.useEffect(() => {
     console.log('updating storage')
     localStorage.setItem('numbersArray', JSON.stringify(numbersArray));
