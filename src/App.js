@@ -3,8 +3,6 @@ import './App.css';
 import React, { useState } from 'react'
 import useLocalStorage from 'use-local-storage';
 
-
-
 function App() {
 
   const [numbersArray, setNumbersArray] = useState([1, 2, 3]);
@@ -20,12 +18,12 @@ function App() {
   }, []);
 
   //if we want to add elements to local storage, this is where it happens.
-  //this runs whenever the numbersArray changes, ie whenever a new value needs to be added to local-storage
+  //this runs on every render  
   React.useEffect(() => {
     console.log('updating storage')
     localStorage.setItem('numbersArray', JSON.stringify(numbersArray));
   }, [numbersArray]);
-
+  ///
   //this pushes new values to loalStorage
   const pushToArray = (number) => {
     console.log('hello')
@@ -39,7 +37,6 @@ function App() {
       <button onClick={() => localStorage.clear()}>Clear storage</button>
     </div>
   );
-
 };
 
 export default App;
